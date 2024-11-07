@@ -3,10 +3,9 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
 const Home = async () => {
-  
-  const {userId} = await auth()
-  if(!userId){
-    redirect("/login")
+  const { userId } = await auth();
+  if (!userId) {
+    redirect("/login");
   }
 
   return (
@@ -15,6 +14,5 @@ const Home = async () => {
     </div>
   );
 };
-
 
 export default Home;
